@@ -7,10 +7,21 @@
 </head>
 <body>
     <div id="myapp">
+        <h1>Batman Quotes <small>{{newQuote}}</small></h1>
+        <input
+          type="text"
+          v-model="newQuote"
+         @keypress.enter="addQuote"
+          >
       <ul>
-        <li style="list-style: none;" v-for="({quote, author}, index) in quotes">
-            <span style="color: green;">{{index+1}}-{{quote}}</span>
-            <blockquote>{{author}}</blockquote>
+      <li
+          style="list-style: none;"
+          v-for="({quote, author}, index) in quotes">
+           <span
+              style="color: green;">{{index+1}}-{{quote}}</span>
+            <blockquote v-if="author">{{author}}</blockquote>
+            <blockquote v-else>Hola</blockquote>
+
         </li>
       </ul>
     </div>

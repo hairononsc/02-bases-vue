@@ -32,8 +32,15 @@ const app = Vue.createApp({
   data() {
     return {
       quotes,
+      newQuote:'Hola mundo'
     };
   },
+  methods:{
+    addQuote(event){
+
+      this.quotes.unshift({ quote:this.newQuote});
+    }
+  }
 });
 
 app.mount("#myapp");
